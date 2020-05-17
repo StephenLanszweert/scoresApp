@@ -1,9 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  AngularFirestoreModule,
-  AngularFirestore,
-} from "@angular/fire/firestore/public_api";
 import { Observable } from "rxjs";
+import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
   selector: "app-composers",
@@ -16,7 +13,13 @@ export class ComposersComponent implements OnInit {
   constructor(private dbService: AngularFirestore) {}
 
   ngOnInit() {
-    this.items = this.dbService.collection("/composers").valueChanges();
+    this.dbService
+      .collection("/composers")
+      .valueChanges()
+      .subscribe((data) => {
+        console.log(data);
+        // this.items = data;
+      });
     console.log(this.items);
     // TODO: implement pagination for composers and parts
     this.composers = [];

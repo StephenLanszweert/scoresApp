@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "scoresapp-f1373": {
+      "hosting": {
+        "scoresapp": [
+          "scoresapp-f1373"
+        ]
+      }
+    }
+  }
+}
