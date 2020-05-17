@@ -1,0 +1,77 @@
+.composers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin-top: 2%;
+}
+
+.left,
+.right {
+  width: 40%;
+  height: 100%;
+}
+
+.left {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  grid-auto-columns: minmax(min-content, max-content);
+  width: 88%;
+}
+
+.composer {
+  height: 25vh;
+  background-color: #6e6ab2;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  &:hover {
+    padding-bottom: 25%;
+    background-color: #ff6584;
+    -webkit-box-shadow: 0px 0px 17px 4px rgba(110, 106, 178, 0.79);
+    -moz-box-shadow: 0px 0px 17px 4px rgba(110, 106, 178, 0.79);
+    box-shadow: 0px 0px 17px 4px rgba(110, 106, 178, 0.79);
+    .composer-button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .composer-button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 14%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: #6c63ff;
+    background-color: white;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .composers {
+    .left {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .composers {
+    margin-top: 10%;
+    .left {
+      grid-template-columns: 1fr;
+    }
+  }
+}

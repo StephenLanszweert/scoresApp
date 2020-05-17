@@ -1,0 +1,19 @@
+.composer-details {
+  width: 89%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  .details,
+  .composer-parts {
+    width: 50%;
+  }
+  .details {
+    h1 {
+      font-size: 3rem;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  }
+}

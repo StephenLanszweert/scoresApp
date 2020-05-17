@@ -1,3 +1,15 @@
-<p>
-  composers works!
-</p>
+<div class="composers">
+  <div class="left">
+    <div class="composer" *ngFor="let composer of composers">
+      <h1>
+        {{ composer.name }}
+      </h1>
+      <button
+        class="composer-button"
+        [routerLink]="['/composer-details', composer.id]"
+      >
+        See details
+      </button>
+    </div>
+  </div>
+</div>
